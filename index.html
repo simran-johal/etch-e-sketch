@@ -12,49 +12,31 @@
 
 
 
-
-
-
-
-
-
-
   <body>
     <header>
         <h1>Etch-e-sketch</h1>
     </header>
     
     <main>
+
         <div id="grid-container"></div>
 
-        <div>
-            <input type ="color">
-            <input type="button">Color Mode
-            <input type="button">Rainbow Mode
-            <input type="button">Eraser
-            <input type="button">Clear
+        <div id="controls-container">
+            <div id="button-options">
+                <input type ="color" class="button-options">
+                <button class="button-options">Color Mode</button>
+                <button class="button-options">Rainbow Mode</button>
+                <button class="button-options">Eraser</button>
+                <button class="button-options">Clear</button>
+            </div>
+            <div id="slider-module">
+                <input id="slider-scale" type="range" value="50" min="10" max="64">
+                <span id="slider-value">50</span>
+            </div>
         </div>
-
-        <div>
-            <input id="slider-scale" type="range" value="50" min="10" max="64">
-            <span id="slider-value">50</span>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </main>
+
 	<script src="script.js"></script>
   </body>
 

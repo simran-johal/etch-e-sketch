@@ -8,8 +8,56 @@ body {
     font-family: 'Baskerville', serif ;
     color: black;
     background-color: rgb(245, 245, 245);
+
 }
 
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+h1 {
+    margin: 50px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+}
+
+#controls-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+#button-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.button-options {
+    width: 100px;
+
+}
+
+
+
+#slider-module {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+}
 
 
 
@@ -22,7 +70,5 @@ body {
 
 }
 
-#grid-container div {
-    
 
-}
+
