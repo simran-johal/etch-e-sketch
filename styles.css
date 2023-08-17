@@ -1,0 +1,28 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: 'Baskerville', serif ;
+    color: black;
+    background-color: rgb(245, 245, 245);
+}
+
+
+
+
+#grid-container {
+    display: grid;
+    width: 500px;
+    height: 500px;
+    grid-template-columns: repeat(50, 1fr);
+    box-shadow:  5px 5px 25px #888888;
+
+}
+
+#grid-container div {
+    
+
+}
