@@ -1,6 +1,7 @@
 
-
-// creating the grid of pixels
+//
+//
+// CREATING THE GRID OF PIXELS
 let gridContainerDiv = document.getElementById('grid-container') // selected container div in html
 let slider = document.getElementById('slider-scale') // selected slider
 let sliderNumber = document.getElementById('slider-value') // selected slider-value
@@ -34,33 +35,63 @@ createDivGrid()
 
 
 
-// use mouse events for the tracking using flags
+// MODES FOR DIFFERENT COLORS 
+// BUTTONS FOR EACH
 
-let isClicked = false
+let clearButton = document.getElementById('clear') 
+let eraserButton = document.getElementById('rainbow-mode')
+let rainbowMode = document.getElementById('eraser')
+let colourMode = document.getElementById('color-mode')
 
-gridContainerDiv.addEventListener('mousedown', (event) => {
-    if (event.target.tagName === "DIV") {
-        event.target.style.backgroundColor = "black"
-        isClicked = true
-    }
-})
+//clear button
+    clearButton.addEventListener('click', function() {
+        let gridDivs = gridContainerDiv.querySelectorAll('div')
+        gridDivs.forEach(function(div) {
+            div.style.backgroundColor = "white";
+        })
+    })
 
-gridContainerDiv.addEventListener('mousemove', (event) => {
-    if (event.target.tagName === "DIV" && isClicked == true) {
-        event.target.style.backgroundColor = "black"
-    }
-})
+let colorModeIsOn = false
+let rainbowModeIsOn = false
+let eraserModeIsOn = false
 
-gridContainerDiv.addEventListener('mouseup', (event) => {
-    if (event.target.tagName === "DIV") {
-        event.target.style.backgroundColor = "black"
-        isClicked = false
-    }
-})
+    if (colourMode.addEventListener('click', function() {
+        colorModeIsOn = true
+    }))
 
-// button for different settings
+    
 
-//clear
+
+    let isClicked = false
+
+    gridContainerDiv.addEventListener('mousedown', (event) => {
+        if (event.target.tagName === "DIV") {
+            event.target.style.backgroundColor = "black"
+            isClicked = true
+        }
+    })
+
+    gridContainerDiv.addEventListener('mousemove', (event) => {
+        if (event.target.tagName === "DIV" && isClicked == true) {
+            event.target.style.backgroundColor = "black"
+        }
+    })
+
+    gridContainerDiv.addEventListener('mouseup', (event) => {
+        if (event.target.tagName === "DIV") {
+            event.target.style.backgroundColor = "black"
+            isClicked = false
+        }
+    })
+
+
+
+
+
+
+
+
+
 
 
 
