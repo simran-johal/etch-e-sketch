@@ -46,10 +46,16 @@ main {
 
 .button-options {
     width: 100px;
+    height: 50px;
 
 }
 
+.four-buttons {
+    border-radius: 50px;
+    border-width: 2px;
+}
 
+four-buttons
 
 #slider-module {
     display: flex;
@@ -72,3 +78,6 @@ main {
 
 
 
+.button-selected {
+    background-color: lightgrey;
+}

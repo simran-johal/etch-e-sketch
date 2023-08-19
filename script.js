@@ -39,9 +39,9 @@ createDivGrid()
 // BUTTONS FOR EACH
 
 let clearButton = document.getElementById('clear') 
-let eraserButton = document.getElementById('rainbow-mode')
-let rainbowMode = document.getElementById('eraser')
-let colourMode = document.getElementById('color-mode')
+let rainbowMode = document.getElementById('rainbow-mode')
+let eraserMode = document.getElementById('eraser')
+let colorMode = document.getElementById('color-mode')
 
 //clear button
     clearButton.addEventListener('click', function() {
@@ -49,42 +49,114 @@ let colourMode = document.getElementById('color-mode')
         gridDivs.forEach(function(div) {
             div.style.backgroundColor = "white";
         })
+            colorMode.classList.remove("button-selected")
+            rainbowMode.classList.remove("button-selected")
+            eraser.classList.remove("button-selected")
     })
+
+// MODES CODE
+
 
 let colorModeIsOn = false
 let rainbowModeIsOn = false
 let eraserModeIsOn = false
+let isClicked = false;
 
-    if (colourMode.addEventListener('click', function() {
-        colorModeIsOn = true
-    }))
+function resetModes() {
+    colorModeIsOn = false
+    rainbowModeIsOn = false
+    eraserModeIsOn = false
+}
 
-    
+//MODE SELECTING FUNCTIONALITY
+   colorMode.addEventListener('click', function (event) {
+        resetModes();
+        colorModeIsOn = true; 
+        if (colorModeIsOn) {
+            colorMode.classList.add("button-selected")
+            rainbowMode.classList.remove("button-selected")
+            eraser.classList.remove("button-selected")
+        } 
+    })
 
+    rainbowMode.addEventListener('click', function(event) {
+        resetModes();
+        rainbowModeIsOn = true; 
+        if (rainbowModeIsOn) {
+            rainbowMode.classList.add("button-selected")
+            colorMode.classList.remove("button-selected")
+            eraserMode.classList.remove("button-selected")
+    }})
 
-    let isClicked = false
-
-    gridContainerDiv.addEventListener('mousedown', (event) => {
-        if (event.target.tagName === "DIV") {
-            event.target.style.backgroundColor = "black"
-            isClicked = true
+    eraserMode.addEventListener('click', function(event) {
+        resetModes();
+        eraserModeIsOn = true; 
+        if (eraserModeIsOn) {
+            eraserMode.classList.add("button-selected")
+            rainbowMode.classList.remove("button-selected")
+            colorMode.classList.remove("button-selected")
         }
     })
 
-    gridContainerDiv.addEventListener('mousemove', (event) => {
-        if (event.target.tagName === "DIV" && isClicked == true) {
-            event.target.style.backgroundColor = "black"
+        
+        
+        
+
+
+ //MOUSE CLICKING TYPE FUNCTIONALITY
+    gridContainerDiv.addEventListener('mousedown', (event) => {
+        if (event.target.tagName === "DIV" && colorModeIsOn) {
+            event.target.style.backgroundColor = "black" //CODE FOR CHOSEN COLOR TO GO HERE
+            isClicked = true
         }
+        else if (event.target.tagName === "DIV" && rainbowModeIsOn) {
+            event.target.style.backgroundColor = randomColor()
+            isClicked = true
+        }
+        else if (event.target.tagName === "DIV" && eraserModeIsOn) {
+            event.target.style.backgroundColor = "white"
+            isClicked = true
+        }
+        else {} //CODE TO MAKE NOTHING HAPPEN
+    })
+
+
+//FUNCTIONALITY FOR COLOR SELCTIONS & RAINBOW MODES
+    function randomColor() {
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        return `rgb(${r},${g},${b})`
+    }
+    
+
+
+
+
+    gridContainerDiv.addEventListener('mousemove', (event) => {
+        if (event.target.tagName === "DIV" && isClicked && colorModeIsOn) {
+            event.target.style.backgroundColor = "black" //CODE FOR CHOSEN COLOR TO GO HERE
+            isClicked = true
+        }
+        else if (event.target.tagName === "DIV" && isClicked && rainbowModeIsOn) {
+            event.target.style.backgroundColor = randomColor()
+            isClicked = true
+        }
+        else if (event.target.tagName === "DIV" && isClicked && eraserModeIsOn) {
+            event.target.style.backgroundColor = "white"
+            isClicked = true
+        }
+        else {} //CODE TO MAKE NOTHING HAPPEN
     })
 
     gridContainerDiv.addEventListener('mouseup', (event) => {
         if (event.target.tagName === "DIV") {
-            event.target.style.backgroundColor = "black"
             isClicked = false
         }
     })
 
 
+    
 
 
 
