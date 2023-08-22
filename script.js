@@ -106,7 +106,7 @@ function resetModes() {
  //MOUSE CLICKING TYPE FUNCTIONALITY
     gridContainerDiv.addEventListener('mousedown', (event) => {
         if (event.target.tagName === "DIV" && colorModeIsOn) {
-            event.target.style.backgroundColor = "black" //CODE FOR CHOSEN COLOR TO GO HERE
+            event.target.style.backgroundColor = chosenColor
             isClicked = true
         }
         else if (event.target.tagName === "DIV" && rainbowModeIsOn) {
@@ -128,14 +128,29 @@ function resetModes() {
         let b = Math.floor(Math.random() * 256);
         return `rgb(${r},${g},${b})`
     }
-    
+
+    // ADD EVENT LISTENERS AND FUNCTIONALITY TO LISTEN FOR COLOR PICKER AND ASSIGN TO COLORMODE
+
+    let chosenColor = "black"
+
+    let chosenColorFromPicker = document.querySelector('input[type="color"]')
+    chosenColorFromPicker.addEventListener('change', (event) => {
+    chosenColor = event.target.value
+    console.log(chosenColor)
+    })
+
+
+
+
+
+
 
 
 
 
     gridContainerDiv.addEventListener('mousemove', (event) => {
         if (event.target.tagName === "DIV" && isClicked && colorModeIsOn) {
-            event.target.style.backgroundColor = "black" //CODE FOR CHOSEN COLOR TO GO HERE
+            event.target.style.backgroundColor = chosenColor
             isClicked = true
         }
         else if (event.target.tagName === "DIV" && isClicked && rainbowModeIsOn) {

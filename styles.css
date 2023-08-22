@@ -5,10 +5,11 @@ html {
 }
 
 body {
-    font-family: 'Baskerville', serif ;
+    font-family: 'Pacifico';
     color: black;
     background-color: rgb(245, 245, 245);
-
+    
+    
 }
 
 header {
@@ -20,6 +21,7 @@ header {
 
 h1 {
     margin: 50px;
+    font-size: 50px;
 }
 
 main {
@@ -33,7 +35,7 @@ main {
 #controls-container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
 
 }
 
@@ -41,31 +43,73 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .button-options {
-    width: 100px;
+    width: 120px;
     height: 50px;
 
 }
 
-.four-buttons {
-    border-radius: 50px;
-    border-width: 2px;
+#color-picker {
+    border: black;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
 }
 
-four-buttons
+.four-buttons {
+    border-radius: 50px;
+    border-width: 3px;
+    border-color: rgb(0, 0, 0, 1);
+    font-family: 'Pacifico';
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.four-buttons:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+    
+}
+
+
 
 #slider-module {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 
 }
 
+#slider-scale {
+    -webkit-appearance: none; 
+    width: 100%;  
+}
 
+#slider-scale::-webkit-slider-runnable-track {
+    height: 5px;
+    background: black;  
+    border: none;
+    border-radius: 5px;
+    }
+
+#slider-scale::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: black;
+    cursor: pointer;
+    border-radius: 50%; 
+    margin-top: -5px;
+    }
+
+#slider-scale::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s; }
 
 #grid-container {
     display: grid;
@@ -76,8 +120,42 @@ four-buttons
 
 }
 
-
-
 .button-selected {
     background-color: lightgrey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* MOBILE DISPLAY MEDIA QUERY*/
+
+@media (max-width: 600px) {
+    
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    #grid-container {
+        display: grid;
+        width: 450px;
+        height: 450px;
+        grid-template-columns: repeat(50, 1fr);
+        box-shadow:  5px 5px 25px #888888;
+    }
+
+    
+
+
 }

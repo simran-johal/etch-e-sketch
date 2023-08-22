@@ -6,36 +6,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Etch-E-Sketch</title>
+    <title>Doodles</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="icon" href="./images/favicon_io/favicon.ico" type="image/x-icon">
   </head>
 
 
 
   <body>
     <header>
-        <h1>Etch-e-sketch</h1>
+        <h1>Doodles</h1>
+        <p>By Sim</p>
     </header>
     
+
+
     <main>
 
         <div id="grid-container"></div>
 
         <div id="controls-container">
             <div id="button-options">
-                <input type ="color" class="button-options">
-                <button id="color-mode" class="button-options four-buttons">Color Mode</button>
-                <button id="rainbow-mode" class="button-options four-buttons">Rainbow Mode</button>
-                <button id="eraser" class="button-options four-buttons">Eraser</button>
-                <button id="clear" class="button-options four-buttons">Clear</button>
+                <input id="color-picker" type ="color" >
+                <button id="color-mode" class="button-options four-buttons left-column">Color Mode</button>
+                <button id="rainbow-mode" class="button-options four-buttons left-column">Rainbow Mode</button>
+                <button id="eraser" class="button-options four-buttons right-column">Eraser</button>
+                <button id="clear" class="button-options four-buttons right-column">Clear</button>
             </div>
             <div id="slider-module">
-                <input id="slider-scale" type="range" value="50" min="10" max="64">
+                <input id="slider-scale" type="range" value="50" min="10" max="100">
                 <span id="slider-value">50</span>
             </div>
         </div>
 
     </main>
+    <footer>
+    </footer>
+
 
 	<script src="script.js"></script>
   </body>
